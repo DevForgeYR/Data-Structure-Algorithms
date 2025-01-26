@@ -1,0 +1,14 @@
+Array methods:
+
+Array.from()  - creates a new, shallow-copied array instance from an iterable object.
+
+Array.isArray() - determines whether the passed value is an Array or not.
+
+Array.of()    - creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments.
+
+  //This is the transpose of matrix
+ for (let i = 0; i < n; i++) {
+    for (let j = i; j < n; j++) {
+      [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+    }
+  }
