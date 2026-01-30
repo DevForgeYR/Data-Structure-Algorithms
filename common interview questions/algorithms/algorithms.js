@@ -118,3 +118,53 @@ console.log(mergeSort(arr));
 // }
 
 // console.log(gcd(48, 18)); // Output: 6
+
+// -------------------------------------------------------------------------------------------------------------------------------------------
+
+/* linklist  
+    push
+    pop
+    shift 
+    unshift
+    getFirst
+    getLast
+    getElementByIndex
+    set */
+class NODE {
+  constructor(data) {
+    this.node = data;
+    this.next = null;
+  }
+}
+
+class linklist {
+  constructor(value) {
+    this.head = value;
+    this.tail = this.head;
+    this.length = 1;
+  }
+
+  push(value) {
+    let newNode = new NODE(value);
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+  }
+
+  pop() {
+    const temp = this.head;
+    const prev = this.head;
+
+    while (temp.next) {
+      prev = temp;
+      temp = prev.next;
+    }
+    prev.next = null;
+    this.tail = prev;
+    this.length--;
+
+    return temp.node;
+  }
+}
+
+const linkedlist = new linklist();

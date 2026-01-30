@@ -602,3 +602,57 @@ function findIndices(arr, k) {
 }
 
 console.log(findIndices([2, 3, 5, 1, 6], 7));
+
+var removeDuplicates = function (nums) {
+  let count = 1;
+  let j = 1;
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] === nums[i - 1]) {
+      count++;
+    } else {
+      count = 1;
+    }
+
+    if (count <= 2) {
+      nums[j] = nums[i];
+      j++;
+    }
+  }
+
+  return j;
+};
+
+var removeDuplicates = function (nums) {
+  let count = 1;
+  let j = 1;
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] === nums[i - 1]) {
+      count++;
+    } else {
+      count = 1;
+    }
+
+    if (count <= 1) {
+      nums[j] = nums[i];
+      j++;
+    }
+  }
+
+  return j;
+};
+
+var removeDuplicates = function (nums) {
+  if (nums.length === 0) return 0;
+
+  let k = 0;
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[k]) {
+      k++;
+      nums[k] = nums[i];
+    }
+  }
+  return k + 1;
+};
